@@ -37,6 +37,9 @@ sudo apt install gazebo
 ```
 
 ## Building the Project
+> Before building download all the models/assets for the worlds form [here](https://drive.google.com/file/d/1eYnjWzUIbmfEQEDjzQg6lR0XCCsRgHs2/view?usp=sharing) and extract all of its contents into ~/.gazebo/models folder
+
+> Also edit the bambot_v2.urdf replace all `/full_path_to_workspace/` with the actual path of your workspace
 
 1. Clone the repository
 
@@ -46,7 +49,7 @@ cd ~/your_ws
 colcon build
 ```
 
-3. Source the workspace:
+1. Source the workspace:
 ```bash
 source install/setup.bash
 ```

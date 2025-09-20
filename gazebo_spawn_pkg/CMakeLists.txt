@@ -17,17 +17,13 @@ find_package(gazebo_ros2_control REQUIRED)
 
 
 add_executable(spawn_robot src/spawn_robot.cpp)
-ament_target_dependencies(geometry_msgs std_msgs  rclcpp gazebo_ros urdf)
+ament_target_dependencies(spawn_robot geometry_msgs std_msgs rclcpp gazebo_ros urdf)
 
 target_include_directories(spawn_robot PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
   $<INSTALL_INTERFACE:include>)
 target_compile_features(spawn_robot PUBLIC c_std_99 cxx_std_17)
 
-install(PROGRAMS
-  src/individual_wheel_controller.py
-  DESTINATION lib/${PROJECT_NAME}
-)
 install(DIRECTORY launch
   DESTINATION share/${PROJECT_NAME}/launch)
 install(DIRECTORY urdf
@@ -35,12 +31,7 @@ install(DIRECTORY urdf
 install(DIRECTORY config
   DESTINATION share/${PROJECT_NAME})
 install(DIRECTORY worlds
-  DESTINATION share/${PROJECT_NAME}
-)
-install(DIRECTORY models
-  DESTINATION share/${PROJECT_NAME}
-)
-
+  DESTINATION share/${PROJECT_NAME})
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
