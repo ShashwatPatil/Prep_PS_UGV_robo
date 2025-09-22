@@ -109,17 +109,17 @@ trajectory:
 
 #### Left Wheel
 ```bash
-ros2 topic pub /bambot/left_wheel/command std_msgs/msg/Float64 "data: 2.0" --once
+ros2 topic pub left_wheel_controller/commands std_msgs/msg/Float64 "data: 2.0" --once
 ```
 
 #### Right Wheel
 ```bash
-ros2 topic pub /bambot/right_wheel/command std_msgs/msg/Float64 "data: -2.0" --once
+ros2 topic pub right_wheel_controller/commands std_msgs/msg/Float64 "data: -2.0" --once
 ```
 
 #### Back Wheel
 ```bash
-ros2 topic pub /bambot/back_wheel/command std_msgs/msg/Float64 "data: 1.0" --once
+ros2 topic pub /back_wheel_controller/commands std_msgs/msg/Float64 "data: 1.0" --once
 ```
 
 ## World Files
